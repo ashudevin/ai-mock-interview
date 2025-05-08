@@ -1,9 +1,7 @@
 import React from "react";
 
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react"; // Import Lucide icons
-import { Link } from "react-router-dom";
 import { Container } from "@/components/container";
-import { MainRoutes } from "@/lib/helpers";
 
 interface SocialLinkProps {
   href: string;
@@ -24,24 +22,6 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, hoverColor }) => {
   );
 };
 
-interface FooterLinkProps {
-  to: string;
-  children: React.ReactNode;
-}
-
-const FooterLink: React.FC<FooterLinkProps> = ({ to, children }) => {
-  return (
-    <li>
-      <Link
-        to={to}
-        className="hover:underline text-gray-300 hover:text-gray-100"
-      >
-        {children}
-      </Link>
-    </li>
-  );
-};
-
 export const Footer = () => {
   return (
     <div className="w-full bg-black text-gray-300 hover:text-gray-100 py-8">
@@ -50,13 +30,6 @@ export const Footer = () => {
           {/* First Column: Links */}
           <div>
             <h3 className="font-bold text-lg mb-4">AI Mock Interview (Made by Nikhil)</h3>
-            {/* <ul className="space-y-2">
-              {MainRoutes.map((route) => (
-                <FooterLink key={route.href} to={route.href}>
-                  {route.label}
-                </FooterLink>
-              ))}
-            </ul> */}
           </div>
 
           {/* Second Column: About Us */}
